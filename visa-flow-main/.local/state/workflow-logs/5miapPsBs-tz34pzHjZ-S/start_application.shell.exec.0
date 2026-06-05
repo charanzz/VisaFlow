@@ -1,0 +1,770 @@
+
+> rest-express@1.0.0 dev
+> cross-env NODE_ENV=development tsx server/index.ts
+
+[1G[0KBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+[dotenv@17.3.1] injecting env (0) from .env [2m-- tip: ⚡️ secrets for agents: https://dotenvx.com/as2[0m
+(node:3307) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+2:23:22 PM [express] serving on port 5000
+2:23:43 PM [express] POST /api/auth/login/applicant 401 in 1809ms :: {"message":"Invalid login for this portal"}
+2:23:55 PM [express] POST /api/auth/login/applicant 200 in 1736ms :: {"user":{"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"},"token":"4aa07b9960e562755d69f4cfc58d6b7c2aea60ba96399e1415e56c86aac52980"}
+2:23:55 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:23:55 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
+2:23:56 PM [express] GET /api/stats/overview 200 in 469ms :: {"total":5,"granted":3,"pending":1,"denied":1}
+2:23:57 PM [express] GET /api/applications 200 in 1843ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T13:23:18.347Z"},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:18:21.224Z"},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z"},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z"},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z"}]
+2:24:12 PM [express] GET /api/auth/me 200 in 1616ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:24:13 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:24:13 PM [express] GET /api/applications 401 in 0ms :: {"message":"Not authenticated"}
+2:24:13 PM [express] GET /api/applications/29 200 in 462ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T13:23:18.347Z"}
+2:24:14 PM [express] GET /api/applications/29/timeline 200 in 1631ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:24:15 PM [express] GET /api/applications/29/documents 304 in 1649ms :: [{"id":46,"applicationId":29,"documentType":"photo","fileName":"photo.png","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/photo-1776172999124.png","fileSize":258521,"mimeType":"image/png","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:25.335Z"},{"id":47,"applicationId":29,"documentType":"passport","fileName":"passport.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/passport-1776173001705.pdf","fileSize":170393,"mimeType":"application/pdf","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:27.024Z"},{"id":48,"applicationId":29,"documentType":"financial","fileName":"passbook.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/financial-1776173003379.pdf","fileSize":43450,"mimeType":"application/pdf","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:27.914Z"}]
+AI risk scoring unavailable, using standard assessment: {"error":{"code":400,"message":"API Key not found. Please pass a valid API key.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API Key not found. Please pass a valid API key."}]}}
+2:24:19 PM [express] POST /api/applications/29/risk-score 200 in 1580ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z","factors":["Documentation submitted","Standard visa application","No anomalies detected","Baseline review applied"]}
+2:24:21 PM [express] GET /api/applications/29/timeline 200 in 235ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:24:22 PM [express] GET /api/applications/29 200 in 471ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:24:23 PM [express] GET /api/applications/29 304 in 472ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:24:27 PM [express] GET /api/applications/29/timeline 304 in 236ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:24:30 PM [express] GET /api/applications/29 304 in 472ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:24:34 PM [express] GET /api/applications/29/timeline 304 in 237ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:24:37 PM [express] GET /api/applications/29 304 in 471ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:24:41 PM [express] GET /api/applications/29/timeline 304 in 236ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:24:43 PM [express] GET /api/applications/29 304 in 473ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:24:44 PM [express] GET /api/applications 200 in 236ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:18:21.224Z"},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z"},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z"},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z"}]
+2:24:46 PM [express] GET /api/stats/overview 304 in 1870ms :: {"total":5,"granted":3,"pending":1,"denied":1}
+2:24:56 PM [express] GET /api/auth/me 304 in 235ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:24:56 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
+2:24:56 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:24:57 PM [express] GET /api/applications/28 200 in 474ms :: {"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:18:21.224Z"}
+2:24:58 PM [express] GET /api/applications/28/timeline 200 in 1636ms :: [{"id":163,"applicationId":28,"stage":1,"stageName":"Document Submission","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.450Z","createdAt":"2026-04-13T10:26:34.819Z"},{"id":164,"applicationId":28,"stage":2,"stageName":"AI Document Verification","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.511Z","createdAt":"2026-04-13T10:26:36.196Z"},{"id":166,"applicationId":28,"stage":3,"stageName":"Security & Background Check","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.571Z","createdAt":"2026-04-13T10:26:36.234Z"},{"id":168,"applicationId":28,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.631Z","createdAt":"2026-04-13T10:26:36.247Z"},{"id":165,"applicationId":28,"stage":5,"stageName":"Blockchain Ledger Entry","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.691Z","createdAt":"2026-04-13T10:26:36.198Z"},{"id":167,"applicationId":28,"stage":6,"stageName":"Visa Decision","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.751Z","createdAt":"2026-04-13T10:26:36.237Z"}]
+2:24:58 PM [express] GET /api/applications/28/documents 304 in 1616ms :: [{"id":43,"applicationId":28,"documentType":"photo","fileName":"photo.png","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-28/photo-1776075999338.png","fileSize":258521,"mimeType":"image/png","verified":true,"aiConfidenceScore":0.85,"aiVerificationNotes":"Document verified. photo document appears authentic based on standard checks.","extractedData":{"status":"valid","documentType":"photo","expiryStatus":"not_applicable","observations":["Document accepted","Standard verification applied"]},"uploadedAt":"2026-04-13T10:26:41.093Z"},{"id":44,"applicationId":28,"documentType":"passport","fileName":"passport.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-28/passport-1776076002602.pdf","fileSize":170393,"mimeType":"application/pdf","verified":true,"aiConfidenceScore":0.85,"aiVerificationNotes":"Document verified. passport document appears authentic based on standard checks.","extractedData":{"status":"valid","documentType":"passport","expiryStatus":"not_applicable","observations":["Document accepted","Standard verification applied"]},"uploadedAt":"2026-04-13T10:26:43.351Z"},{"id":45,"applicationId":28,"documentType":"financial","fileName":"passbook.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-28/financial-1776076004076.pdf","fileSize":43450,"mimeType":"application/pdf","verified":true,"aiConfidenceScore":0.85,"aiVerificationNotes":"Document verified. financial document appears authentic based on standard checks.","extractedData":{"status":"valid","documentType":"financial","expiryStatus":"not_applicable","observations":["Document accepted","Standard verification applied"]},"uploadedAt":"2026-04-13T10:26:44.548Z"}]
+2:25:03 PM [express] GET /api/applications/28 304 in 462ms :: {"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:18:21.224Z"}
+2:25:04 PM [express] GET /api/applications/28/timeline 304 in 234ms :: [{"id":163,"applicationId":28,"stage":1,"stageName":"Document Submission","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.450Z","createdAt":"2026-04-13T10:26:34.819Z"},{"id":164,"applicationId":28,"stage":2,"stageName":"AI Document Verification","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.511Z","createdAt":"2026-04-13T10:26:36.196Z"},{"id":166,"applicationId":28,"stage":3,"stageName":"Security & Background Check","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.571Z","createdAt":"2026-04-13T10:26:36.234Z"},{"id":168,"applicationId":28,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.631Z","createdAt":"2026-04-13T10:26:36.247Z"},{"id":165,"applicationId":28,"stage":5,"stageName":"Blockchain Ledger Entry","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.691Z","createdAt":"2026-04-13T10:26:36.198Z"},{"id":167,"applicationId":28,"stage":6,"stageName":"Visa Decision","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.751Z","createdAt":"2026-04-13T10:26:36.237Z"}]
+AI risk scoring unavailable, using standard assessment: {"error":{"code":400,"message":"API Key not found. Please pass a valid API key.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API Key not found. Please pass a valid API key."}]}}
+2:25:06 PM [express] POST /api/applications/28/risk-score 200 in 1243ms :: {"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z","factors":["Documentation submitted","Standard visa application","No anomalies detected","Baseline review applied"]}
+2:25:07 PM [express] GET /api/applications/28 200 in 462ms :: {"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z"}
+2:25:09 PM [express] GET /api/applications/28/timeline 304 in 231ms :: [{"id":163,"applicationId":28,"stage":1,"stageName":"Document Submission","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.450Z","createdAt":"2026-04-13T10:26:34.819Z"},{"id":164,"applicationId":28,"stage":2,"stageName":"AI Document Verification","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.511Z","createdAt":"2026-04-13T10:26:36.196Z"},{"id":166,"applicationId":28,"stage":3,"stageName":"Security & Background Check","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.571Z","createdAt":"2026-04-13T10:26:36.234Z"},{"id":168,"applicationId":28,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.631Z","createdAt":"2026-04-13T10:26:36.247Z"},{"id":165,"applicationId":28,"stage":5,"stageName":"Blockchain Ledger Entry","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.691Z","createdAt":"2026-04-13T10:26:36.198Z"},{"id":167,"applicationId":28,"stage":6,"stageName":"Visa Decision","status":"completed","notes":null,"completedAt":"2026-04-13T13:24:24.751Z","createdAt":"2026-04-13T10:26:36.237Z"}]
+2:25:10 PM [express] GET /api/applications 200 in 231ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z"},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z"},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z"},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z"}]
+2:25:12 PM [express] GET /api/stats/overview 304 in 1877ms :: {"total":5,"granted":3,"pending":1,"denied":1}
+2:25:25 PM [express] GET /api/auth/me 304 in 1608ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:25:25 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
+2:25:25 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:25:26 PM [express] GET /api/applications/29 304 in 460ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:25:27 PM [express] GET /api/applications/29/timeline 304 in 1677ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:25:27 PM [express] GET /api/applications/29/documents 304 in 1656ms :: [{"id":46,"applicationId":29,"documentType":"photo","fileName":"photo.png","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/photo-1776172999124.png","fileSize":258521,"mimeType":"image/png","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:25.335Z"},{"id":47,"applicationId":29,"documentType":"passport","fileName":"passport.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/passport-1776173001705.pdf","fileSize":170393,"mimeType":"application/pdf","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:27.024Z"},{"id":48,"applicationId":29,"documentType":"financial","fileName":"passbook.pdf","fileUrl":"https://sxtluwyswewcutmlxmet.supabase.co/storage/v1/object/public/documents/app-29/financial-1776173003379.pdf","fileSize":43450,"mimeType":"application/pdf","verified":false,"aiConfidenceScore":null,"aiVerificationNotes":null,"extractedData":null,"uploadedAt":"2026-04-14T13:23:27.914Z"}]
+2:25:32 PM [express] GET /api/applications/29 304 in 474ms :: {"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"}
+2:25:33 PM [express] GET /api/applications/29/timeline 304 in 237ms :: [{"id":169,"applicationId":29,"stage":1,"stageName":"Document Submission","status":"in_progress","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.395Z"},{"id":170,"applicationId":29,"stage":2,"stageName":"AI Document Verification","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.492Z"},{"id":172,"applicationId":29,"stage":3,"stageName":"Security & Background Check","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.497Z"},{"id":171,"applicationId":29,"stage":4,"stageName":"AI Risk Assessment","status":"completed","notes":null,"completedAt":"2026-04-14T14:24:19.050Z","createdAt":"2026-04-14T13:23:22.497Z"},{"id":174,"applicationId":29,"stage":5,"stageName":"Blockchain Ledger Entry","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.664Z"},{"id":173,"applicationId":29,"stage":6,"stageName":"Visa Decision","status":"pending","notes":null,"completedAt":null,"createdAt":"2026-04-14T13:23:22.498Z"}]
+2:25:36 PM [express] POST /api/auth/logout 200 in 0ms :: {"success":true}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:27:41 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/auth.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:27:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/auth.tsx, /src/index.css[22m [33m(x2)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:28:47 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/auth.tsx, /src/index.css[22m [33m(x3)[39m
+2:30:27 PM [express] POST /api/auth/login/applicant 200 in 1792ms :: {"user":{"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"},"token":"8dc246a1f6025633a85045a915d8b5da4da535028e4f91c97526499faa418ff7"}
+2:30:27 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
+2:30:27 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:30:29 PM [express] GET /api/stats/overview 304 in 467ms :: {"total":5,"granted":3,"pending":1,"denied":1}
+2:30:30 PM [express] GET /api/applications 304 in 1707ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z"},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z"},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z"},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z"}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:34:09 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/locales/en.json[22m
+2:34:17 PM [express] GET /api/auth/me 304 in 1627ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:34:17 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:34:17 PM [express] GET /api/applications 401 in 0ms :: {"message":"Not authenticated"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:35:41 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/locales/ta.json[22m
+2:35:50 PM [express] GET /api/auth/me 304 in 1700ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:35:50 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:35:50 PM [express] GET /api/applications 401 in 0ms :: {"message":"Not authenticated"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:36:15 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/locales/ja.json[22m
+2:36:23 PM [express] GET /api/auth/me 304 in 1615ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:36:24 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:36:24 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:36:44 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/locales/zh.json[22m
+2:36:52 PM [express] GET /api/auth/me 304 in 1623ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:36:53 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+2:36:53 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:37:16 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/locales/ko.json[22m
+2:37:24 PM [express] GET /api/auth/me 304 in 1617ms :: {"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"}
+2:37:24 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:37:24 PM [express] GET /api/applications 401 in 1ms :: {"message":"Not authenticated"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:38:19 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:39:00 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:39:15 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x2)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:39:29 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x3)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:39:54 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x4)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:08 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x5)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:26 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x6)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:39 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x7)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:47 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x8)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:49 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x9)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:40:59 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x10)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x11)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:06 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x12)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:15 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x13)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:20 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x14)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:29 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x15)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:37 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x16)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:39 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x17)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:49 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x18)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:41:54 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/officer-dashboard.tsx, /src/index.css[22m [33m(x19)[39m
+2:42:11 PM [express] GET /api/applications 304 in 1649ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z"},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z"},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z"},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z"},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z"}]
+2:42:12 PM [express] GET /api/stats/overview 304 in 2085ms :: {"total":5,"granted":3,"pending":1,"denied":1}
+2:42:17 PM [express] GET /api/chat/history 200 in 240ms :: []
+2:42:21 PM [express] GET /api/interviews 200 in 2245ms :: [{"id":1,"applicationId":28,"officerId":9,"applicantId":13,"scheduledAt":"2026-04-16T04:30:00.000Z","duration":30,"status":"scheduled","roomName":"visaflow-28-1776077256995","initiatedBy":"applicant","requestNote":null,"interviewResult":null,"officerNotes":null,"applicationStatusUpdated":false,"createdAt":"2026-04-13T10:47:37.119Z","updatedAt":"2026-04-13T10:47:36.995Z","officerName":"naresh","applicantName":"david","visaType":"work","destinationCountry":"China"},{"id":2,"applicationId":28,"officerId":9,"applicantId":13,"scheduledAt":"2026-04-15T02:30:00.000Z","duration":30,"status":"scheduled","roomName":"visaflow-28-1776077551974","initiatedBy":"applicant","requestNote":null,"interviewResult":null,"officerNotes":null,"applicationStatusUpdated":false,"createdAt":"2026-04-13T10:52:32.096Z","updatedAt":"2026-04-13T10:52:31.974Z","officerName":"naresh","applicantName":"david","visaType":"work","destinationCountry":"China"},{"id":4,"applicationId":28,"officerId":9,"applicantId":13,"scheduledAt":"2026-04-14T03:00:00.000Z","duration":30,"status":"completed","roomName":"visaflow-28-1776088268656","initiatedBy":"applicant","requestNote":null,"interviewResult":"passed","officerNotes":"","applicationStatusUpdated":true,"createdAt":"2026-04-13T13:51:08.694Z","updatedAt":"2026-04-14T13:01:18.487Z","officerName":"naresh","applicantName":"david","visaType":"work","destinationCountry":"China"},{"id":3,"applicationId":28,"officerId":9,"applicantId":13,"scheduledAt":"2026-04-14T02:30:00.000Z","duration":30,"status":"scheduled","roomName":"visaflow-28-1776081944484","initiatedBy":"applicant","requestNote":null,"interviewResult":null,"officerNotes":null,"applicationStatusUpdated":false,"createdAt":"2026-04-13T12:05:46.785Z","updatedAt":"2026-04-13T12:05:44.484Z","officerName":"naresh","applicantName":"david","visaType":"work","destinationCountry":"China"}]
+2:42:27 PM [express] POST /api/auth/logout 200 in 1ms :: {"success":true}
+2:42:47 PM [express] POST /api/auth/login/admin 200 in 1746ms :: {"user":{"id":16,"fullName":"Admin","email":"admin@visa.com","role":"admin","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-14T12:55:42.053Z"},"token":"239c7fc89549f854875550da5d2926dfff32aee78f26a1ed5386612fe521153e"}
+2:42:48 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:42:48 PM [express] GET /api/applications/all 401 in 1ms :: {"message":"Not authenticated"}
+2:42:49 PM [express] GET /api/admin/users 304 in 476ms :: [{"id":4,"fullName":"david V","email":"davidstark245@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-09T04:06:20.355Z"},{"id":5,"fullName":"manooo","email":"davidcoder24@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-09T04:31:24.794Z"},{"id":6,"fullName":"david stark","email":"david@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-09T04:57:16.345Z"},{"id":7,"fullName":"pasu","email":"pasu123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-09T05:28:03.619Z"},{"id":9,"fullName":"naresh","email":"usa_officer@gmail.com","role":"officer","plainPassword":"usa123","assignedCountry":"China","nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-09T11:51:30.102Z"},{"id":10,"fullName":"naresh","email":"pa4134920@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-11T05:18:11.334Z"},{"id":11,"fullName":"charan","email":"charancharn53@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-11T10:04:37.824Z"},{"id":12,"fullName":"akash","email":"akash123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-03-13T07:57:22.987Z"},{"id":13,"fullName":"david","email":"david123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-12T07:11:01.578Z"},{"id":15,"fullName":"charu","email":"charu123@gmail.com","role":"applicant","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-13T04:45:24.461Z"},{"id":16,"fullName":"Admin","email":"admin@visa.com","role":"admin","plainPassword":null,"assignedCountry":null,"nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-14T12:55:42.053Z"},{"id":17,"fullName":"david V","email":"india123@gmail.com","role":"officer","plainPassword":"india123","assignedCountry":"India","nationality":null,"passportNumber":null,"dateOfBirth":null,"phone":null,"createdAt":"2026-04-14T13:19:47.576Z"}]
+2:42:49 PM [express] GET /api/interviews 401 in 0ms :: {"message":"Not authenticated"}
+2:42:50 PM [express] GET /api/feedback 304 in 488ms :: [{"id":2,"userId":15,"userName":"charu","userEmail":"charu123@gmail.com","message":"make update there is some bug in interview","createdAt":"2026-04-13T04:59:52.146Z"},{"id":1,"userId":7,"userName":"pasu","userEmail":"pasu123@gmail.com","message":"change th ui please","createdAt":"2026-03-13T11:21:48.177Z"}]
+2:42:52 PM [express] GET /api/applications/all 200 in 2581ms :: [{"id":29,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"iajziaziaz","destinationCountry":"India","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-15","status":"pending","currentStage":1,"riskScore":26,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-14T13:23:18.347Z","updatedAt":"2026-04-14T14:24:18.575Z","applicantName":"david","applicantNationality":"India","applicantEmail":"david123@gmail.com","applicantPassport":""},{"id":28,"userId":13,"applicationType":"new","visaType":"work","purposeOfVisit":"i want to come china","destinationCountry":"China","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-22","status":"granted","currentStage":6,"riskScore":19,"riskLevel":"low","aiAnalysisSummary":"Standard risk assessment completed. Application documentation has been reviewed and meets baseline requirements.","blockchainHash":"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0","blockchainTxId":"0xec772689bba4ccb49be5907361bb12ee","qrCodeData":"{\"visaNumber\":\"VZ20267B9D4DB9\",\"hash\":\"8e10b61d6592c8b60b8fab91d8d3edb103620c2a31163ff9c026f0152302ddf0\",\"txId\":\"0xec772689bba4ccb49be5907361bb12ee\",\"blockIndex\":7,\"holder\":\"david\",\"visaType\":\"work\",\"expiresAt\":\"2027-04-14\",\"valid\":true}","visaNumber":"VZ20267B9D4DB9","grantedAt":"2026-04-14T14:18:21.223Z","expiryDate":"2027-04-14","denialReason":"Failed interview.","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T10:26:34.576Z","updatedAt":"2026-04-14T14:25:05.635Z","applicantName":"david","applicantNationality":"China","applicantEmail":"david123@gmail.com","applicantPassport":""},{"id":27,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to come to china please","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application lacks essential identifying information, such as nationality and immigration history, and provides an unprofessional and vague statement of purpose. Furthermore, zero out of three submitted documents have been verified as authentic, indicating a high probability of fraudulent intent or severe documentation non-compliance.","blockchainHash":"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7","blockchainTxId":"0x4f9d53b20e113957e803d63328d2be57","qrCodeData":"{\"visaNumber\":\"VZ2026355EA2C5\",\"hash\":\"b649826446337f74db586dd9bde66c1b2280a0633bc6adf7b7a30fec25ec74b7\",\"txId\":\"0x4f9d53b20e113957e803d63328d2be57\",\"blockIndex\":5,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ2026355EA2C5","grantedAt":"2026-04-13T10:08:53.825Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"please come","renewalReminderSent":false,"createdAt":"2026-04-13T09:03:07.673Z","updatedAt":"2026-04-13T10:08:53.825Z","applicantName":"david","applicantNationality":"China","applicantEmail":"david123@gmail.com","applicantPassport":""},{"id":26,"userId":13,"applicationType":"new","visaType":"transit","purposeOfVisit":"this is test","destinationCountry":"UK","intendedEntryDate":"2026-04-14","intendedExitDate":"2026-04-29","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents an extremely high risk due to an invalid purpose of visit ('this is test') and a total lack of verified or high-confidence documentation. Missing nationality and immigration history data prevent any baseline security screening, suggesting a non-genuine or automated test application.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-13T08:52:02.359Z","updatedAt":"2026-04-13T10:06:15.499Z","applicantName":"david","applicantNationality":"UK","applicantEmail":"david123@gmail.com","applicantPassport":""},{"id":25,"userId":15,"applicationType":"new","visaType":"business","purposeOfVisit":"sdfghjksdfghj","destinationCountry":"UK","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-02-11","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"40e17ad8c9fcc075e00c0f7a5638934ef22d25d6cff3295ff12844ba8bdeb707","blockchainTxId":"0xdf8c8309ee4947bf3c819f8d3d2a7680","qrCodeData":"{\"visaNumber\":\"VZ20269EA13C20\",\"hash\":\"40e17ad8c9fcc075e00c0f7a5638934ef22d25d6cff3295ff12844ba8bdeb707\",\"txId\":\"0xdf8c8309ee4947bf3c819f8d3d2a7680\",\"blockIndex\":4,\"holder\":\"charu\",\"visaType\":\"business\",\"expiresAt\":\"2027-04-13\",\"valid\":true}","visaNumber":"VZ20269EA13C20","grantedAt":"2026-04-13T05:31:28.936Z","expiryDate":"2027-04-13","denialReason":null,"officerNotes":"your oky come to uk","renewalReminderSent":false,"createdAt":"2026-04-13T04:51:31.642Z","updatedAt":"2026-04-13T05:31:28.936Z","applicantName":"charu","applicantNationality":"UK","applicantEmail":"charu123@gmail.com","applicantPassport":""},{"id":23,"userId":13,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuyhujdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-16","intendedExitDate":"2026-04-21","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents extreme risk indicators, primarily a nonsensical and invalid purpose of visit string and a total lack of verified documentation. The inability to confirm nationality or document authenticity suggests a high probability of fraudulent intent or a complete failure to meet basic submission requirements.","blockchainHash":"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669","blockchainTxId":"0x92fd3ae49391a50b36dcefd2cbdc8814","qrCodeData":"{\"visaNumber\":\"VZ2026E9E63B22\",\"hash\":\"5b7205a005db3b22b213c43091d73cf30ccaca934549ea3adfcf07c646c40669\",\"txId\":\"0x92fd3ae49391a50b36dcefd2cbdc8814\",\"blockIndex\":3,\"holder\":\"david\",\"visaType\":\"student\",\"expiresAt\":\"2027-04-12\",\"valid\":true}","visaNumber":"VZ2026E9E63B22","grantedAt":"2026-04-12T08:30:26.245Z","expiryDate":"2027-04-12","denialReason":null,"officerNotes":"acdfghjk","renewalReminderSent":false,"createdAt":"2026-04-12T08:04:07.660Z","updatedAt":"2026-04-13T10:06:15.734Z","applicantName":"david","applicantNationality":"China","applicantEmail":"david123@gmail.com","applicantPassport":""},{"id":22,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"asdfghjklqwertyuio","destinationCountry":"China","intendedEntryDate":"2026-04-15","intendedExitDate":"2026-04-23","status":"denied","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"i dont like you","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-12T07:08:02.889Z","updatedAt":"2026-04-12T13:16:56.573Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":21,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"wertyuisdfghjsdfghj","destinationCountry":"China","intendedEntryDate":"2026-04-13","intendedExitDate":"2026-04-15","status":"denied","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"Application did not meet requirements","officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T11:43:00.534Z","updatedAt":"2026-04-11T11:50:57.252Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":20,"userId":7,"applicationType":"new","visaType":"tourist","purposeOfVisit":"test exafghjvbn","destinationCountry":"China","intendedEntryDate":"2026-04-17","intendedExitDate":"2026-04-29","status":"granted","currentStage":6,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":"78712e3a8ed57d232cba833b105c738c4dae1b8e4ba0aa90626e3596506265b9","blockchainTxId":"0x434e6f61ef91b22786933e12c35c5294","qrCodeData":"{\"visaNumber\":\"VZ20268BBE8BC5\",\"hash\":\"78712e3a8ed57d232cba833b105c738c4dae1b8e4ba0aa90626e3596506265b9\",\"txId\":\"0x434e6f61ef91b22786933e12c35c5294\",\"blockIndex\":2,\"holder\":\"pasu\",\"visaType\":\"tourist\",\"expiresAt\":\"2027-04-11\",\"valid\":true}","visaNumber":"VZ20268BBE8BC5","grantedAt":"2026-04-11T09:35:07.105Z","expiryDate":"2027-04-11","denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:32:48.682Z","updatedAt":"2026-04-11T09:35:07.105Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":19,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"exmple test","destinationCountry":"China","intendedEntryDate":"2026-04-18","intendedExitDate":"2026-04-29","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:27:02.148Z","updatedAt":"2026-04-11T04:27:02.148Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":18,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"exmple test","destinationCountry":"China","intendedEntryDate":"2026-04-17","intendedExitDate":"2026-04-21","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:18:20.958Z","updatedAt":"2026-04-11T04:18:20.958Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":17,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-17","intendedExitDate":"2026-04-29","status":"pending","currentStage":1,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents a critical risk due to the complete lack of verified or high-confidence documentation and the failure to provide a valid nationality. Furthermore, the stated purpose of 'example test' is inconsistent with legitimate student visa requirements, suggesting either a fraudulent submission or a significant data entry error.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:13:53.270Z","updatedAt":"2026-04-13T10:06:15.969Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":16,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-17","intendedExitDate":"2026-04-23","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:08:11.090Z","updatedAt":"2026-04-11T04:08:11.090Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":15,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-17","intendedExitDate":"2026-04-23","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:07:54.682Z","updatedAt":"2026-04-11T04:07:54.682Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":14,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-30","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T04:06:25.821Z","updatedAt":"2026-04-11T04:06:25.821Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":13,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-30","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:58:57.722Z","updatedAt":"2026-04-11T03:58:57.722Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":12,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-30","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:45:15.352Z","updatedAt":"2026-04-11T03:45:15.352Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":11,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-18","intendedExitDate":"2026-04-16","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:37:29.967Z","updatedAt":"2026-04-11T03:37:29.967Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":10,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-18","intendedExitDate":"2026-04-16","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:35:54.206Z","updatedAt":"2026-04-11T03:35:54.206Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":9,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-18","intendedExitDate":"2026-04-16","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:35:37.177Z","updatedAt":"2026-04-11T03:35:37.177Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":8,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-22","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:34:20.310Z","updatedAt":"2026-04-11T03:34:20.310Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":7,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-22","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:20:54.194Z","updatedAt":"2026-04-11T03:20:54.194Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":6,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-22","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:20:25.796Z","updatedAt":"2026-04-11T03:20:25.796Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":5,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"example test","destinationCountry":"China","intendedEntryDate":"2026-04-23","intendedExitDate":"2026-04-22","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-11T03:20:11.211Z","updatedAt":"2026-04-11T03:20:11.211Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":4,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"i dont known","destinationCountry":"China","intendedEntryDate":"2026-04-11","intendedExitDate":"2026-04-18","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-10T11:02:48.065Z","updatedAt":"2026-04-10T11:02:48.065Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":3,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"i dont known","destinationCountry":"China","intendedEntryDate":"2026-04-11","intendedExitDate":"2026-04-18","status":"pending","currentStage":1,"riskScore":null,"riskLevel":null,"aiAnalysisSummary":null,"blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":null,"officerNotes":null,"renewalReminderSent":false,"createdAt":"2026-04-10T11:02:08.276Z","updatedAt":"2026-04-10T11:02:08.276Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":2,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"i want to pursue my mtech degree in china","destinationCountry":"China","intendedEntryDate":"2026-03-12","intendedExitDate":"2029-07-11","status":"denied","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"The application presents a high risk due to a 0% verification rate of submitted documents and missing essential demographic information such as nationality. Without verified credentials or identity confirmation, the authenticity of the applicant's academic intent and background cannot be established.","blockchainHash":null,"blockchainTxId":null,"qrCodeData":null,"visaNumber":null,"grantedAt":null,"expiryDate":null,"denialReason":"your bank staemnt","officerNotes":"hi","renewalReminderSent":false,"createdAt":"2026-03-11T09:57:27.079Z","updatedAt":"2026-04-13T10:06:16.204Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""},{"id":1,"userId":7,"applicationType":"new","visaType":"student","purposeOfVisit":"My name is Naresh Kumar, and I am writing this letter to support my application for a student visa to study in Canada. I have been accepted into the Bachelor of Computer Science program at XYZ University starting in September 2026.\n\nI have always been passionate about technology and software development. Studying in Canada will provide me with access to high-quality education, modern research facilities, and international exposure that will help me develop my technical skills and professional knowledge.\n\nMy parents will financially support my education and living expenses during my studies. I have attached all the necessary documents, including my admission letter, financial statements, academic transcripts, and passport copies.\n\nAfter completing my studies, I intend to return to my home country and apply the knowledge and skills I gained to contribute to the technology sector.\n\nI respectfully request you to consider my application and grant me a student visa. Thank you for your time and consideration.","destinationCountry":"China","intendedEntryDate":"2026-03-12","intendedExitDate":"2026-03-31","status":"granted","currentStage":6,"riskScore":40,"riskLevel":"medium","aiAnalysisSummary":"A critical discrepancy exists between the stated destination country (China) and the purpose of visit (Canada), indicating potential fraudulent use of template documentation. The risk is further elevated by a low document verification rate, with only one out of four documents confirmed as authentic.","blockchainHash":"fb9456904898bbdd43d9df79d4c7b2e57f398232a28c480ceb7c7cb660b1c631","blockchainTxId":"0xb37846a476cd148c6850ad9ab44d8bb4","qrCodeData":"{\"visaNumber\":\"VZ20263C262956\",\"hash\":\"fb9456904898bbdd43d9df79d4c7b2e57f398232a28c480ceb7c7cb660b1c631\",\"txId\":\"0xb37846a476cd148c6850ad9ab44d8bb4\",\"blockIndex\":1,\"holder\":\"pasu\",\"visaType\":\"student\",\"expiresAt\":\"2027-03-10\",\"valid\":true}","visaNumber":"VZ20263C262956","grantedAt":"2026-03-10T03:05:58.251Z","expiryDate":"2027-03-10","denialReason":null,"officerNotes":"i think he had valid raeason jhuhuhjiji","renewalReminderSent":false,"createdAt":"2026-03-09T12:42:42.546Z","updatedAt":"2026-04-13T10:06:16.439Z","applicantName":"pasu","applicantNationality":"China","applicantEmail":"pasu123@gmail.com","applicantPassport":""}]
+2:42:52 PM [express] GET /api/stats/overview 200 in 3791ms :: {"total":28,"pending":18,"granted":6,"denied":4,"inReview":0,"blockchainEntries":7,"highRisk":0}
+2:43:20 PM [express] GET /api/interviews 401 in 1ms :: {"message":"Not authenticated"}
